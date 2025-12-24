@@ -175,6 +175,20 @@
         </footer>
 
     </div>
+
+    <div class="music-player">
+        <audio id="bg-music" loop>
+            <source src="Angel (Remastered 2019).mp3" type="audio/mpeg">
+            Browser kamu tidak mendukung audio element.
+        </audio>
+        
+        <button onclick="toggleMusic()" class="music-btn">
+            <div class="music-icon">
+                <i class="fa-solid fa-compact-disc" id="music-icon-spin"></i>
+            </div>
+            <span id="music-text">Play Music</span>
+        </button>
+    </div>
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
