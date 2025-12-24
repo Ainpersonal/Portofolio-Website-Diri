@@ -1,0 +1,401 @@
+/* === START OF STYLE.CSS === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: black;
+    color: #e7e7ee;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Effects */
+.image-gradient {
+    position: fixed;
+    top: 0; right: 0;
+    opacity: 0.5; z-index: -1;
+}
+
+.layer-blur {
+    height: 30rem; width: 30rem;
+    position: fixed; top: 20%; right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* === HEADER & NAVIGASI (FIXED) === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+}
+
+header h1 { 
+    font-size: 2rem; 
+    font-weight: 300; 
+    letter-spacing: 2px;
+    opacity: 1 !important; 
+    visibility: visible !important;
+}
+
+/* KUNCI AGAR MENU MUNCUL DI DESKTOP */
+nav { 
+    display: flex; 
+    gap: 3rem;
+    opacity: 1 !important;          /* Paksa Muncul */
+    visibility: visible !important; /* Paksa Muncul */
+    transform: none !important;     /* Hapus efek gerak AOS yg bikin error */
+}
+
+nav a { 
+    text-decoration: none; 
+    color: inherit; 
+    font-size: 0.9rem; /* Ukuran standar desktop */
+    font-weight: 400; 
+    letter-spacing: 1px;
+    transition: all 0.3s; 
+    position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+nav a:hover { color: #fff; text-shadow: 0 0 10px rgba(127, 66, 167, 0.8); }
+
+.btn-signing {
+    background-color: #a7a7aa; color: black;
+    padding: 0.6rem 1.5rem; border-radius: 50px; border: none;
+    cursor: pointer; font-weight: 600;
+    transition: transform 0.2s;
+}
+.btn-signing:hover { transform: scale(1.05); background-color: #fff; }
+
+/* === MAIN HERO === */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.content { width: 45%; z-index: 10; }
+.model-3d { width: 55%; height: 80vh; position: relative; right: -50px; }
+
+.tag-box {
+    width: 18rem; height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #656565, #7f42a7, #6600c5);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.tag-box .tag {
+    position: absolute; inset: 2px;
+    background: black; border-radius: 50px;
+    display: flex; justify-content: center; align-items: center;
+    color: #a7a7aa; font-size: 0.8rem;
+}
+
+.content h1 {
+    font-size: 4.5rem; font-weight: 700; line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to bottom, #fff, #a7a7aa);
+    background-clip: text;          
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.description {
+    font-size: 1.2rem; color: #a1a1a1;
+    max-width: 35rem; margin-bottom: 3rem;
+}
+
+.buttons { display: flex; gap: 1rem; }
+.btn-get-started {
+    text-decoration: none; color: #a1a1a1;
+    padding: 0.8rem 1.5rem; border: 1px solid #333; border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-get-started:hover { border-color: #7f42a7; color: white; }
+
+.btn-signing-main {
+    text-decoration: none; background: white; color: black;
+    padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600;
+    transition: 0.3s;
+}
+.btn-signing-main:hover {
+    background: #7f42a7; color: white; box-shadow: 0 0 20px rgba(127, 66, 167, 0.5);
+}
+
+/* === SECTIONS STYLING === */
+.section-padding {
+    padding: 6rem 0;
+    border-top: 1px solid #1a1a1a;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #fff, #7f42a7);
+    background-clip: text;          
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* SKILLS GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    transition: transform 0.3s, background 0.3s;
+    text-align: center;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    background: rgba(127, 66, 167, 0.2);
+    border-color: #7f42a7;
+}
+
+.icon-skill { font-size: 3rem; margin-bottom: 1rem; color: #a7a7aa; }
+.glass-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.glass-card p { font-size: 0.9rem; color: #888; }
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: #0f0f0f;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 1px solid #222;
+}
+
+.project-card:hover { transform: scale(1.02); border-color: #555; }
+
+.project-img {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s;
+}
+.project-card:hover .project-img img { transform: scale(1.1); }
+
+.project-info { padding: 1.5rem; }
+.project-info h3 { margin-bottom: 0.5rem; }
+.project-info p { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.btn-small {
+    text-decoration: none; color: white; font-size: 0.8rem;
+    padding: 0.5rem 1rem; border: 1px solid #7f42a7; border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-small:hover { background: #7f42a7; }
+
+/* RESOURCES / ABOUT */
+.resource-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.bio-text { flex: 1; }
+.bio-text h3 { font-size: 2rem; margin-bottom: 1rem; }
+.bio-text p { color: #aaa; line-height: 1.6; margin-bottom: 2rem; }
+
+.timeline {
+    border-left: 2px solid #333;
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute; left: -2.6rem; top: 5px;
+    width: 12px; height: 12px;
+    background: #7f42a7; border-radius: 50%;
+    box-shadow: 0 0 10px #7f42a7;
+}
+
+.timeline-item h4 { margin-bottom: 0.3rem; }
+.timeline-item p { color: #888; font-size: 0.9rem; } 
+
+.bio-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-wrapper {
+    width: 350px; height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transform: rotate(3deg);
+    border: 2px solid #333;
+    transition: 0.3s;
+}
+.img-wrapper:hover { transform: rotate(0); border-color: #7f42a7; }
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* === CONTACT SECTION === */
+.glass-box-contact {
+    background: linear-gradient(145deg, rgba(25,25,25,1), rgba(10,10,10,1));
+    padding: 4rem;
+    border-radius: 30px;
+    text-align: center;
+    border: 1px solid #333;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.glass-box-contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.glass-box-contact p { color: #aaa; margin-bottom: 2rem; }
+
+.contact-links {
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem;
+    margin-top: 2rem; 
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    text-decoration: none; 
+    color: white;
+    padding: 1rem 2rem; 
+    border-radius: 50px;
+    background: #1a1a1a; 
+    border: 1px solid #333;
+    transition: 0.3s; 
+    display: flex; align-items: center; gap: 10px;
+}
+
+.contact-btn:hover {
+    background: #7f42a7; 
+    border-color: #7f42a7; 
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(127, 66, 167, 0.4);
+}
+
+footer {
+    text-align: center; 
+    padding: 2rem;
+    color: #555; 
+    font-size: 0.9rem;
+    border-top: 1px solid #111;
+    margin-top: 3rem;
+}
+
+/* === MOBILE RESPONSIVE (DIPERBAIKI) === */
+@media (max-width: 968px) {
+    /* 1. Header & Navigasi Rata Samping (Horizontal) */
+    header {
+        flex-wrap: wrap; 
+        gap: 1rem;
+        justify-content: center; /* Logo di tengah jika layar sempit */
+    }
+
+    nav { 
+        display: flex; 
+        flex-direction: row; /* KUNCINYA: Paksa Horizontal */
+        gap: 15px;           
+        width: 100%;
+        justify-content: center; /* Menu di tengah */
+        margin-bottom: 0;
+        align-items: center;
+    }
+    
+    nav a { 
+        padding: 5px; 
+        font-size: 0.85rem; /* Ukuran pas di HP */
+    }
+
+    /* Sembunyikan tombol sign in di HP agar muat */
+    .btn-signing { display: none; }
+
+    /* 2. Layout Konten Utama */
+    main {
+        flex-direction: column; 
+        justify-content: flex-start;
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    .content {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .content h1 { font-size: 3rem; }
+    
+    .model-3d {
+        width: 100%; height: 400px;
+        right: 0; margin-top: 0;
+    }
+
+    /* 3. Penyesuaian Bagian Lain */
+    .resource-flex { flex-direction: column-reverse; }
+    .img-wrapper { width: 100%; max-width: 300px; height: 400px; }
+    .section-title { text-align: center; font-size: 2rem; }
+    
+    .contact-links { flex-direction: column; }
+    .contact-btn { width: 100%; justify-content: center; }
+}
